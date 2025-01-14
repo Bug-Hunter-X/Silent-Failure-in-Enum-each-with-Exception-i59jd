@@ -1,0 +1,3 @@
+# Silent Failure in Elixir's Enum.each
+
+This example demonstrates a potential issue with Elixir's `Enum.each` when an exception occurs within the anonymous function. The code iterates over a list, and if a value is 3, it simulates a long-running operation (which might potentially fail). If an error occurs, `Enum.each` won't raise an exception, and the rest of the elements might not be processed. This results in a silent failure, making debugging tricky.  The solution shows a robust way to handle potential errors within the iteration using `Enum.map` and `try-catch`.
